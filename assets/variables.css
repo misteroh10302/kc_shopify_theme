@@ -1,0 +1,60 @@
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+    - Breakpoint pixel values are used in the window.theme.breakpoints object
+==============================================================================*/
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $grid-breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+==============================================================================*/
+/*================ Color Variables ================*/
+/*================ Sizing Variables ================*/
+/*================ Footer Variables ================*/
+/*================ Z-Index ================*/
+/*================ SVG ================*/
+/*================ Drawers ================*/
+/*================ Hero Slider ================*/
+/*================ Typography ================*/
+/*================ Gift Cards ================*/
+/*================ Z-index ================*/
+/*================ Product video ================*/
+/*================ Image placeholder ================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+
+@font-face {
+  font-family: "Domaine Text Bold";
+  src: url("DomaineText-Bold.otf") format("otf")
+}  
+
+
+@font-face {
+  font-family: "Domaine Text Light";
+  src: url("DomaineText-Light.otf") format("otf")
+}  
+
+@font-face {
+  font-family: "FlechaL";
+  src: url("FlechaL-ExtraLightItalic.woff") format("woff"),
+    url("FlechaL-ExtraLightItalic.woff2") format("woff2")
+}  
+
+@font-face {
+  font-family: "BL Artic Regular";
+  src: url("BL\ Arctic\ Regular.woff") format("woff"),
+    url("BL\ Arctic\ Regular.woff2") format("woff2")
+}  
+
+
+body {
+  font-family: "Domaine Text Bold", serif;
+}
+
+h1, .large-header {
+  font-family: "BL Artic Regular", sans-serif;
+}
+
+h2 {
+  font-family: "FlechaL", sans-serif;
+}
+

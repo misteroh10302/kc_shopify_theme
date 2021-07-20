@@ -1,0 +1,8 @@
+.page-container {
+    .section-header {
+        margin-bottom: 4rem;
+        @include for-tablet-portrait-up {
+            margin-bottom: 1rem;
+        }
+    }
+}

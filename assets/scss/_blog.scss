@@ -1,0 +1,28 @@
+#shopify-section-blog-template {
+    .article__tags {
+        margin-bottom: 1rem;
+        &.rte ul {
+            margin-bottom: 0;
+        }
+    }
+    a.article__grid-tag {
+        border: 0;
+        @extend .subhead;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .article__title {
+        @extend .body-copy;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 1.5rem;
+    }
+
+    .article__grid-meta {
+        text-align: center;
+        padding-bottom: 1rem;
+        margin-bottom: 0;
+    }
+    
+}

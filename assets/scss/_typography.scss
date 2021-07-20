@@ -1,0 +1,100 @@
+h1, .large-heading {
+    color: $brown;
+    font-weight: 100;
+    @include for-tablet-portrait-up {
+        font-size: 9.8rem;
+        letter-spacing: 0;
+        line-height: 8.8rem;
+        text-transform: uppercase;
+    }
+    font-size: 4.3rem;
+    letter-spacing: 0;
+    line-height: 4rem;
+}
+
+.large-heading-italic, .large-heading i {
+    @include for-tablet-portrait-up {
+        font-size: 11.1rem;
+        letter-spacing: -.77px;
+        line-height: 10rem;
+    }
+    font-size: 4.9rem;
+    letter-spacing: -0.34px;
+    line-height: 5.3rem;
+}
+
+
+.body-copy {
+    font-family: "Domaine Text Light", 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 2.3rem;
+    color: $brown;
+    @include for-tablet-portrait-up {
+        font-size: 1.9rem;
+        letter-spacing: 0;
+        line-height: 3rem;
+    }
+}
+
+.subhead {
+    font-family: "Domaine Text Bold", 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    letter-spacing: 0.46px;
+    line-height: 1.5rem;
+    color: $brown;
+    font-weight: 600;
+    @include for-tablet-portrait-up {
+        font-size: 1.2rem;
+        letter-spacing: 0.56px;
+        line-height: 3rem;
+    }
+}
+
+.rte {
+    .p1 {
+        margin-bottom: 1rem;
+    }
+    p.p1, p.p2, p {
+        @extend .body-copy;
+    }
+    h5, h3.p1 {
+        @extend .subhead;
+    }
+}
+
+.text-brown {
+    color: $brown;
+}
+
+
+
+// ====================================== //
+// PRODUCT TYPE
+// ====================================== //
+
+.product-title {
+    font-size: 2.4rem;
+    letter-spacing: -0.17px;
+    line-height: 2.7rem;
+    font-family:  "BL Artic Regular", Arial, Helvetica, sans-serif;
+    @include for-tablet-portrait-up {
+        font-size: 3rem;
+        letter-spacing: -0.21px;
+        line-height: 4rem;
+    }
+}
+
+.product-description {
+    font-size: 1.1rem;
+    letter-spacing: 0px;
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-family:  "Poppins", Arial, Helvetica, sans-serif;
+    color: lighten($brown, 30);
+    @include for-tablet-portrait-up {
+        font-size: 1.4rem;
+        letter-spacing: 0px;
+        line-height: 2.3rem;
+    }
+}

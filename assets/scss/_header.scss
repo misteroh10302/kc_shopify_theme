@@ -1,0 +1,17 @@
+.site-header {
+    @include for-phone-only {
+        .flex-container {
+            align-items: center;
+        }
+    }
+}
+
+.feature-row__text {
+    position: relative;
+}
+// Homepage
+.feature-row-inner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
