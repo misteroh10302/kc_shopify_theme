@@ -1,7 +1,31 @@
 #shopify-section-footer {
+    .page-width {
+        max-width: 100%;
+    }
+    .site-footer {
+        padding: 2rem 0;
+        @include for-tablet-portrait-up {
+            padding: 2rem 0;
+        }
+    }
     .site-footer__linklist-item {
         @extend .large-nav-bar;
+        @extend .bl-serif;
         color: $offWhite;
     }
+    .site-footer-social {
+        text-align: center;
+        @include for-tablet-portrait-up {
+            .site-footer__social-icons {
+                text-align: center;
+            }
+        }
+    }
+    .site-footer__hr {
+        border-bottom: 1px solid $offWhite;
+        margin: 2rem 0;
+    }
+
 }
+
 

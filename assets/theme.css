@@ -9787,6 +9787,10 @@ Image Helper Styles
   width: 100%;
 }
 
+.bl-serif, #shopify-section-footer .site-footer__linklist-item {
+  font-family: "BL Artic Regular", sans-serif;
+}
+
 h1, .large-heading {
   color: #BC7635;
   font-weight: 100;
@@ -10217,8 +10221,31 @@ header.site-header .site-nav--centered {
   transform: translateY(-50%);
 }
 
+#shopify-section-footer .page-width {
+  max-width: 100%;
+}
+#shopify-section-footer .site-footer {
+  padding: 2rem 0;
+}
+@media (min-width: 600px) {
+  #shopify-section-footer .site-footer {
+    padding: 2rem 0;
+  }
+}
 #shopify-section-footer .site-footer__linklist-item {
   color: #FBF8F4;
+}
+#shopify-section-footer .site-footer-social {
+  text-align: center;
+}
+@media (min-width: 600px) {
+  #shopify-section-footer .site-footer-social .site-footer__social-icons {
+    text-align: center;
+  }
+}
+#shopify-section-footer .site-footer__hr {
+  border-bottom: 1px solid #FBF8F4;
+  margin: 2rem 0;
 }
 
 .page-container .section-header {
