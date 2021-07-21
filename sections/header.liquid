@@ -55,7 +55,7 @@
   {% endif %}
 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
-    <div class="flex-container flex-3-col space-between items-baseline grid grid--no-gutters site-header__mobile-nav">
+    <div class="flex-container flex-3-col space-between items-center grid grid--no-gutters site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third logo-align--center' -%}
       {% else %}
@@ -63,7 +63,7 @@
       {% endif %}
       <!-- Left side nav KC -->
       {% if section.settings.align_logo == 'center' %}
-        <nav class="small--hide border-bottom {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third {% endif %}" id="AccessibleNav" role="navigation">
+        <nav class="small--hide {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third {% endif %}" id="AccessibleNav" role="navigation">
           {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered flex-container flex-start' %}
         </nav>
       {% endif %}
@@ -91,7 +91,7 @@
             <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}" data-image-loading-animation>
               {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
               <img class="lazyload js"
-                   src="{{ section.settings.logo | img_url: '300x300' }}"
+                   src="{{ section.settings.logo | img_url: '500x500' }}"
                    data-src="{{ img_url }}"
                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
                    data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
@@ -114,6 +114,7 @@
         {% else %}
           </div>
         {% endif %}
+        <p class="site-subtitle text-center subhead subhead-serif">Jewlery</p>
       </div>
 
       {% if section.settings.align_logo == 'left' %}
@@ -125,27 +126,33 @@
       <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
         <div class="site-header__icons-wrapper">
 
-          <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
-            {% include 'icon-search' %}
+          <button type="button" class="btn--link site-nav__link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
+            <!-- {% include 'icon-search' %} -->
+            {{ 'layout.navigation.search' | t }}
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button>
 
+          <a href="contact" class="site-nav__link">Contact</a>
+
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <a href="{{ routes.account_url }}" class="site-header__icon site-header__account">
-                {% include 'icon-login' %}
-                <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
+              <a href="{{ routes.account_url }}" class="site-nav__link site-header__account">
+                <!-- {% include 'icon-login' %} -->
+                {{ 'layout.customer.account' | t }}
+                <!-- <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span> -->
               </a>
             {% else %}
-              <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account">
-                {% include 'icon-login' %}
-                <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
+              <a href="{{ routes.account_login_url }}" class="site-nav__link site-header__account">
+                <!-- {% include 'icon-login' %} -->
+                {{ 'layout.customer.log_in' | t }}
+                <!-- <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span> -->
               </a>
             {% endif %}
           {% endif %}
 
-          <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-            {% include 'icon-cart' %}
+          <a href="{{ routes.cart_url }}" class="site-nav__link site-header__cart">
+            <!-- {% include 'icon-cart' %} -->
+            {{ 'layout.cart.title' | t }}
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
             <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
               <span data-cart-count>{{ cart.item_count }}</span>

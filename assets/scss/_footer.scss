@@ -1,0 +1,7 @@
+#shopify-section-footer {
+    .site-footer__linklist-item {
+        @extend .large-nav-bar;
+        color: $offWhite;
+    }
+}
+

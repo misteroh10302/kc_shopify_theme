@@ -9803,6 +9803,40 @@ h1, .large-heading {
   }
 }
 
+.top-nav-bar, header.site-header .site-nav__link {
+  font-size: 1.4rem;
+  letter-spacing: 0px;
+  line-height: 2.3rem;
+  color: #BC7635;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+@media (min-width: 600px) {
+  .top-nav-bar, header.site-header .site-nav__link {
+    font-size: 1.4rem;
+    letter-spacing: 0px;
+    line-height: 2.3rem;
+  }
+}
+
+.large-nav-bar, #shopify-section-footer .site-footer__linklist-item {
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 3.1rem;
+}
+@media (min-width: 600px) {
+  .large-nav-bar, #shopify-section-footer .site-footer__linklist-item {
+    font-size: 2.7rem;
+    letter-spacing: 0px;
+    line-height: 4.7rem;
+  }
+}
+
+.subhead-serif {
+  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+  text-transform: uppercase;
+}
+
 .large-heading-italic, .large-heading i {
   font-size: 4.9rem;
   letter-spacing: -0.34px;
@@ -10128,12 +10162,51 @@ body, html {
   text-transform: capitalize;
 }
 
-@media (max-width: 599px) {
-  .site-header .flex-container {
-    align-items: center;
+#shopify-section-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: transparent;
+}
+#shopify-section-header.scrolled {
+  background-color: #F7F0E8;
+}
+#shopify-section-header.scrolled .site-subtitle {
+  display: none;
+}
+#shopify-section-header.scrolled header.site-header .site-nav--centered {
+  margin: 0;
+}
+@media (min-width: 600px) {
+  #shopify-section-header.scrolled header.site-header.logo--center {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
+header.site-header {
+  background-color: transparent;
+  border-bottom: 1px solid #BC7635;
+  padding-top: 0;
+}
+header.site-header .site-header__mobile-nav {
+  background-color: transparent;
+}
+@media (min-width: 600px) {
+  header.site-header.logo--center {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 599px) {
+  header.site-header .flex-container {
+    align-items: center;
+  }
+}
+header.site-header .site-nav--centered {
+  padding-bottom: 0;
+}
 .feature-row__text {
   position: relative;
 }
@@ -10142,6 +10215,10 @@ body, html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+#shopify-section-footer .site-footer__linklist-item {
+  color: #FBF8F4;
 }
 
 .page-container .section-header {

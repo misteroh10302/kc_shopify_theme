@@ -9685,3 +9685,26 @@ function removeImageLoadingAnimation(image) {
     imageWrapper.removeAttribute('data-image-loading-animation');
   }
 }
+
+
+// =======================================================
+// CUSTOM KC
+// =======================================================
+
+
+// Navigation
+const $HEADER = $('#shopify-section-header');
+
+const UPDATE_NAV_ON_SCROLL = () => {
+  if (window.scrollY > 2) {
+    $HEADER.addClass('scrolled');
+  } else {
+    $HEADER.removeClass('scrolled');
+  }
+}
+
+
+$(()=> {
+  UPDATE_NAV_ON_SCROLL();
+  window.addEventListener('scroll', UPDATE_NAV_ON_SCROLL);
+});
