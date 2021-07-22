@@ -28,15 +28,15 @@ h2, .h2 {
 }
 
 h3, .h3 {
-    font-size: 5.9rem;
-    letter-spacing: -0.41px;
-    line-height: 5.6rem;
     font-weight: 400;
+    font-size: 4.3rem;
+    letter-spacing: 0px;
+    line-height: 4.4rem;
     @extend .bl-serif;
     @include for-tablet-portrait-up {
-        font-size: 4.3rem;
-        letter-spacing: 0px;
-        line-height: 4.4rem;
+        font-size: 5.9rem;
+        letter-spacing: -0.41px;
+        line-height: 5.6rem;
     }
 }
 
@@ -168,4 +168,18 @@ h4, .h4 {
         letter-spacing: 0px;
         line-height: 2.3rem;
     }
+}
+
+
+// TEXT COLORS
+.text-white {
+    color: $offWhite;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
 }

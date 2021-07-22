@@ -6,7 +6,7 @@
     font-family: "Poppins", sans-serif;
     line-height: 35px;
     font-size: 1.4rem;
-    padding: 1rem 3rem;
+    padding: .5rem 3rem;
     text-transform: capitalize;
     &.btn-blue {
         background-color: $lightBlue;
@@ -20,6 +20,16 @@
         letter-spacing: .25px;
         &:hover {
             background-color: darken($lightBlue, 10%);
+        }
+    }
+    &.btn-white {
+        border: 1px solid $offWhite;
+        color: lighten(white, 10%);
+        font-weight: 400;
+        letter-spacing: .25px;
+        min-width: 200px;
+        &:hover {
+            background-color: #f7f0e84a;
         }
     }
 }

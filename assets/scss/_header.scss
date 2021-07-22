@@ -40,6 +40,7 @@ header.site-header {
         }
     }
     @include for-phone-only {
+        
         .flex-container {
             align-items: center;
         }
@@ -49,6 +50,9 @@ header.site-header {
     }
     .site-nav__link {
         @extend .top-nav-bar;
+    }
+    @include for-tablet-portrait-up {
+        padding: 0 2rem;
     }
 }
 .feature-row__text {

@@ -9826,16 +9826,16 @@ h1, .large-heading {
 }
 
 h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
-  font-size: 5.9rem;
-  letter-spacing: -0.41px;
-  line-height: 5.6rem;
   font-weight: 400;
+  font-size: 4.3rem;
+  letter-spacing: 0px;
+  line-height: 4.4rem;
 }
 @media (min-width: 600px) {
   h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
-    font-size: 4.3rem;
-    letter-spacing: 0px;
-    line-height: 4.4rem;
+    font-size: 5.9rem;
+    letter-spacing: -0.41px;
+    line-height: 5.6rem;
   }
 }
 
@@ -9969,6 +9969,18 @@ h4, .h4 {
   }
 }
 
+.text-white {
+  color: #FBF8F4;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
 .grid-container {
   display: grid;
 }
@@ -10021,6 +10033,9 @@ Flex Styles
 }
 .flex-container.column {
   flex-direction: column;
+}
+.flex-container.gap {
+  gap: 2rem;
 }
 
 .flex-3-col > * {
@@ -10242,7 +10257,7 @@ body, html {
   font-family: "Poppins", sans-serif;
   line-height: 35px;
   font-size: 1.4rem;
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   text-transform: capitalize;
 }
 .btn.btn-blue, #shopify-section-footer .site-footer__item-inner--newsletter .btn-blue.newsletter__submit {
@@ -10258,6 +10273,21 @@ body, html {
 }
 .btn.btn-blue:hover, #shopify-section-footer .site-footer__item-inner--newsletter .btn-blue.newsletter__submit:hover {
   background-color: #3b6171;
+}
+.btn.btn-white, #shopify-section-footer .site-footer__item-inner--newsletter .btn-white.newsletter__submit {
+  border: 1px solid #FBF8F4;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  min-width: 200px;
+}
+.btn.btn-white:hover, #shopify-section-footer .site-footer__item-inner--newsletter .btn-white.newsletter__submit:hover {
+  background-color: #f7f0e84a;
+}
+
+.need-assistance {
+  background-color: #BC7635;
+  padding: 3rem;
 }
 
 #shopify-section-header {
@@ -10305,6 +10335,12 @@ header.site-header .site-header__mobile-nav {
 header.site-header .site-nav--centered {
   padding-bottom: 0;
 }
+@media (min-width: 600px) {
+  header.site-header {
+    padding: 0 2rem;
+  }
+}
+
 .feature-row__text {
   position: relative;
 }

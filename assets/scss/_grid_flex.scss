@@ -51,6 +51,9 @@ Flex Styles
     &.column {
         flex-direction: column;
     }
+    &.gap {
+        gap: 2rem;
+    }
 }
 
 .flex-3-col {
