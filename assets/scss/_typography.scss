@@ -3,6 +3,12 @@
     font-family: "BL Artic Regular", sans-serif;
 }
 
+
+.poppins-sans-serif {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+
+}
+
 h1, .large-heading {
     color: $brown;
     font-weight: 100;
@@ -15,6 +21,37 @@ h1, .large-heading {
     font-size: 4.3rem;
     letter-spacing: 0;
     line-height: 4rem;
+}
+
+h2, .h2 {
+
+}
+
+h3, .h3 {
+    font-size: 5.9rem;
+    letter-spacing: -0.41px;
+    line-height: 5.6rem;
+    font-weight: 400;
+    @extend .bl-serif;
+    @include for-tablet-portrait-up {
+        font-size: 4.3rem;
+        letter-spacing: 0px;
+        line-height: 4.4rem;
+    }
+}
+
+h4, .h4 {
+    font-size: 2.4rem;
+    letter-spacing: -0.17px;
+    line-height: 2.7rem;
+    color: $brown;
+    font-weight: 400;
+    @extend .bl-serif;
+    @include for-tablet-portrait-up {
+        font-size: 3rem;
+        letter-spacing: -0.21px;
+        line-height: 4rem;
+    }
 }
 
 .top-nav-bar {

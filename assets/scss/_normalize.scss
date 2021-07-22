@@ -14,3 +14,34 @@ body,html {
     width: 100%;
     padding: 0 3rem;
 }
+
+.main-content {
+    padding-top: 8.5rem;
+    @include for-tablet-portrait-up {
+        padding-top: 8.5rem;
+    }
+}
+
+
+// FORMS
+
+.input-group__field {
+    background-color: transparent;
+    border-radius: 3rem;
+    border: 1px solid $offWhite;
+    text-align: center;
+    @extend .poppins-sans-serif;
+    color: $offWhite;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $offWhite;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $offWhite;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: $offWhite;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $offWhite;
+    }
+}

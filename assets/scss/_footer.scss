@@ -25,7 +25,13 @@
         border-bottom: 1px solid $offWhite;
         margin: 2rem 0;
     }
-
+    .site-footer h4, .site-footer .h4  {
+        @extend .h3;
+        color: $offWhite;
+    }
+    .site-footer__item-inner--newsletter .newsletter__submit {
+        @extend .btn;
+    }
 }
 
 

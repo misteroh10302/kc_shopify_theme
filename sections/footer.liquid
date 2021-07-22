@@ -173,7 +173,9 @@
       </div>
   {%- endif -%}
 </div>
+
 <hr class="site-footer__hr">
+
   <div class="page-width">
     <div class="site-footer__content">
       {%- for block in section.blocks -%}
@@ -200,11 +202,11 @@
                       </p>
                     {%- endif -%}
                     <input type="hidden" name="contact[tags]" value="newsletter">
-                    <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                    <div class="{% if form.errors %} input-group--error{% endif %} input-field ">
                       <input type="email"
                         name="contact[email]"
                         id="{{ formId }}-email"
-                        class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+                        class="input-group__field  newsletter__input{% if form.errors %} input--error{% endif %}"
                         value="{{ form.email }}"
                         placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
                         aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
@@ -218,7 +220,7 @@
                           data-form-status
                         {% endif %}>
                       <span class="input-group__btn">
-                        <button type="submit" class="btn newsletter__submit" name="commit" >
+                        <button type="submit" class="btn btn-blue newsletter__submit" name="commit" >
                           <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
                         </button>
                       </span>
