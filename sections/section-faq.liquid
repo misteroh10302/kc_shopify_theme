@@ -1,0 +1,81 @@
+<div class="info-page">
+  <!-- ============================
+  HEADER
+  ================================= -->
+  <header>
+    <div class="container" data-trigger="scroll">
+      <h1 class="body--sans-sm" data-reveal="lines-masked">{{ section.settings.title }}</h1>
+    </div>
+  </header>
+
+  <!-- ============================
+  FAQs
+  ================================= -->
+  <section class="container p-3 grid-container grid-1-4-col">
+    <ul class="faq-sidebar">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'faq_header' %}
+          <li>
+            <a class="animate-item small-caps subhead section-heading">{{ block.settings.title }}</a>
+          </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+    <div class="accordion list-animation-wrapper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'faq_header' %}
+            <h3 class="animate-item small-caps subhead section-heading">{{ block.settings.title }}</h3>
+          {% when 'faq_item' %}
+          {%- include 'block-faq', title:  block.settings.title, body: block.settings.desc -%}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </section>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "FAQ Page content",
+
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_header",
+      "name": "FAQ Section Heading",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Question"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Question"
+        },
+        {
+          "id": "desc",
+          "type": "richtext",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -13,6 +13,24 @@ $double: $rootSpacing*2;
         grid-template-columns: 1fr 1fr;
         gap: $rootSpacing*3;
     }
+    &.no-gap {
+        gap:0;
+    }
+}
+.grid-2-col.half-right {
+    direction: rtl;
+    > * {
+        direction: ltr;   
+    }
+}
+
+.grid-1-4-col {
+    grid-template-columns: 1fr;
+    gap: $double;
+    @include for-tablet-portrait-up {
+        grid-template-columns: 1fr 4fr;
+        gap: $rootSpacing*3;
+    }
 }
 
 .grid-2-col-mobile {

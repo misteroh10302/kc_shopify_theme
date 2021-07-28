@@ -1,0 +1,168 @@
+<header class="flex-container" data-trigger="scroll">
+    <div class="{% if section.settings.main_image != blank %}half{% endif %} {% if section.settings.main_image == blank %} practice-header-center {% endif %} container header-text-content">
+    </div>
+    {% if section.settings.main_image != blank %}
+      <div class="half background-image-cover"
+          style="background-image: url({{ section.settings.main_image |  img_url: '1220x1220' }})"
+        >
+      </div>
+    {% endif %}
+  
+  </header>
+  
+  <!-- ====== PRACTICE SLIDES ======== -->
+  {% for block in section.blocks %}
+    {% assign img_url = block.settings.practice_slide_image | img_url: 'original' %}
+    <section class="practice-slide practice-slide-{{ forloop.index }} slide-{{block.settings.image_alignment}}" 
+        style="{% if block.settings.image_alignment == 'background' %} background-image: url({{img_url}}); background-size: cover; {% endif %}"
+    >
+      <div 
+        class="grid-container {% if block.settings.image_alignment != 'background' %} grid-2-col {% endif %} no-gap {{block.settings.image_alignment}} {% if block.settings.show_readmore == false %} mobile-flex-center {% endif %}">
+        <div class="container practice-slide-text p-3">
+          <div class="small-slide-tag show-mobile" >{{ block.settings.slide-tag }}</div>
+          <div class="practice-title hidden-on-mobile" >{{ block.settings.title }}</div>
+          <div data-trigger="scroll" class="practice-main-text">
+            <div class="practice-title">{{ block.settings.title }}</div>
+            <h1 class="practice-text-{{block.settings.text_align}}"
+            data-reveal="lines-masked"
+            style='text-align: {{block.settings.text_align}}'>
+              {{ block.settings.header }}
+            </h1>
+          </div>
+          <div class="body-copy">{{block.settings.bodycopy}}</div>
+          {% if block.settings.linktext != "" %}
+            <a href="{{ block.settings.link }}" class="btn btn--cta m-t-3">{{ block.settings.linktext }}</a>
+          {% endif %}
+        </div>
+  
+        <!-- ====== PRACTICE SLIDES IMAGES ======== -->
+        {% if block.settings.practice_slide_image != blank %}
+          {% if block.settings.image_alignment == "half-left" %}
+            {% assign image_position = "left: 0;" %}
+          {% elsif block.settings.image_alignment == "half-right" %}
+             {% assign image_position = "right: 0;" %}
+          {% else %}
+             {% assign image_position = "" %}
+          {% endif %}
+          {% if block.settings.image_alignment == "half-left" or  block.settings.image_alignment == "half-right" %}
+            <div class="half hide-mobile cropped-image-wrapper absolute-background background-image-cover"
+              style="{{image_position}}"
+            >
+              {% assign m_img_url = img_url %}
+              {%- if block.settings.practice_slide_image_m -%}
+                {% assign m_img_url = block.settings.practice_slide_image_m | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+              {%- endif -%}
+              <img
+              class="lazyload fade-in responsive-image"
+              data-src="{{ m_img_url }}"
+              data-widths="[360, 540, 720, 900, 1080, 1600, 2200, 2800]"
+              data-aspectratio="{{ m_img_url.aspect_ratio }}"
+              data-sizes="auto"
+              alt="{{ block.settings.practice_slide_image.alt | escape  }}"
+              data-anim="scale"
+              >
+  
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+    </section>
+  {% endfor %}
+    
+  {% schema %}
+  {
+    "name": "About - Content",
+  
+    "settings": [
+      {
+        "id": "subheading",
+        "type": "text",
+        "label": "Subeading",
+        "default": "Our Practices"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading",
+        "default": "Our Practices"
+      },
+      {
+          "id": "main_image",
+          "type": "image_picker",
+          "label": "Main Practice Image"
+      },
+       {
+          "id": "desc",
+          "type": "richtext",
+          "label": "Main Practice Info"
+      },
+      {
+          "id": "mobile_bottom_image",
+          "type": "image_picker",
+          "label": "Bottom Image Mobile ",
+          "info": "This will be a full width image on the bottom of the page"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "practice_section",
+        "name": "About Slide",
+        "settings": [
+          {
+            "id": "header",
+            "type": "text",
+            "label": "Large Header Text"
+          },
+          {
+              "type": "select",
+              "id": "text_align",
+              "options": [
+                  { "value": "center", "label": "Center"},
+                  { "value": "left", "label": "Left"},
+                  { "value": "right", "label": "Right"}
+              ],
+              "label": "Large Header Text Align"
+          },
+          {
+            "id": "practice_slide_image",
+            "type": "image_picker",
+            "label": "Slide Image"
+          },
+          {
+            "id": "practice_slide_image_m",
+            "type": "image_picker",
+            "label": "Mobile Slide Image",
+            "info": "Optional"
+          },
+          {
+              "type": "select",
+              "id": "image_alignment",
+              "options": [
+                  { "value": "half-left", "label": "Half Left"},
+                  { "value": "half-right", "label": "Half Right"},
+                  { "value": "background", "label": "Background"}
+                ],
+              "label": "Alignment for Slide Image"
+          },
+          {
+            "id": "bodycopy",
+            "type": "richtext",
+            "label": "Body Copy"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": "Button link"
+          },
+          {
+            "id": "linktext",
+            "type": "text",
+            "label": "Button text",
+            "default": "Click here"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

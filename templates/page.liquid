@@ -1,4 +1,22 @@
-<div class="page-width">
+{% for cl_image in page.metafields.accentuate.banner_image  %}
+{%- assign img_url = cl_image.cloudinary_src | append: 'w_1' | replace: 'w_1', 'w_{width}' -%}
+  <img class="lazyload fade-and-scale responsive-image {% if page.metafields.accentuate.banner_image %}hide-mobile{% endif %}"
+    data-src="{{ img_url }}"
+    data-widths="[360, 540, 720, 900, 1080, 1600, 2200, 2800]"
+    data-aspectratio="{{ cl_image.aspect_ratio }}"
+    data-sizes="auto"
+    alt="{{ alt_text }}">
+{% endfor %}
+{% for cl_image in page.metafields.accentuate.mobile_banner_image  %}
+{%- assign img_url = cl_image.cloudinary_src | append: 'w_1' | replace: 'w_1', 'w_{width}' -%}
+  <img class="lazyload fade-and-scale responsive-image {% if page.metafields.accentuate.mobile_banner_image %}hide-desktop{% endif %}"
+    data-src="{{ img_url }}"
+    data-widths="[360, 540, 720, 900, 1080, 1600, 2200, 2800]"
+    data-aspectratio="{{ cl_image.aspect_ratio }}"
+    data-sizes="auto"
+    alt="{{ alt_text }}">
+{% endfor %}
+<div class="page-width p-t-3">
   <div class="grid">
     <div class="grid__item medium-up--six-sixths medium-up--push-two-twelfth">
       <div class="section-header text-center">

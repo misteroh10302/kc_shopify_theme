@@ -1,0 +1,137 @@
+
+/* --------------------------------------------------------------------------
+Accordions
+-----------------------------------------------------------------------------*/
+.accordion {
+  h3 {
+    margin-top: 5rem;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    + .accordion-panel {
+      border-top: 1px solid $brown;
+    }
+  }
+
+}
+/* Accordion Panel Styles ---------------- */
+.accordion-panel {
+    border-bottom: 1px solid $brown;
+    padding: 0.5rem 0;
+    &:first-of-type {
+      border-top: 1px solid $brown;
+    }
+    h2 {
+      padding: 1rem 3.5rem 1rem 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Accordion Text Styles ---------------- */
+  .accordion-text {
+    display: none;
+    max-width: 94rem;
+    p {
+      @extend .text-brown;
+    }
+    p:first-of-type {
+      @include for-tablet-portrait-up {
+        margin-top: 0.5rem;
+      }
+    }
+    p:last-of-type {
+      margin-bottom: 2.2rem;
+    }
+  }
+  
+  .page-faq .accordion-text {
+    .body--sans-sm {
+      line-height: (22 / 14);
+      @include for-phone-only {
+        font-size: 1.2rem;
+        line-height: (18 / 12);
+      }
+    }
+    @include for-phone-only {
+      max-width: 95%;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  
+  /* Clickable accordion headings ---------------- */
+  .accordion-toggle {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0;
+    padding-right: 4.5rem;
+    text-transform: none;
+    @include for-tablet-portrait-up {
+      font-size: 2.4rem;
+      line-height: 1;
+      font-weight: 300;
+    }
+    @include for-phone-only {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+  
+    /* Plus / Minus icon */
+    .icon {
+      cursor: pointer;
+      position: absolute;
+      right: 1.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.1rem;
+      height: 1.4rem;
+    }
+    .icon::after,
+    .icon::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+    .icon::before {
+      transition: all 0.3s ease-in-out;
+      transform: rotate(90deg);
+    }
+  
+    /* Accordion arrow (product detail page) */
+    .icon-arrow-down {
+      top: 42%;
+      width: 1.2rem;
+      @include for-phone-only {
+        width: 0.8rem;
+        top: 40%;
+      }
+  
+    }
+  }
+  
+  /* Expanded accordion styles ---------------- */
+  .expanded {
+    .accordion-toggle {
+      .icon-arrow-down {
+        transform: translateY(-50%) rotateX(180deg);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+  
+      }
+      span::before {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      span::after {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }

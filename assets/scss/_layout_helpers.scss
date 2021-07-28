@@ -17,7 +17,7 @@
 .p-3 {
     padding: 3rem 3.5rem;
     @include for-phone-only {
-        padding: 0rem;
+        padding: 0 1.8rem;
     }
 }
 
@@ -423,3 +423,4 @@ Image Helper Styles
 .responsive-image {
     width: 100%;
 }
+

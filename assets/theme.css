@@ -1696,9 +1696,10 @@ button {
   }
 }
 /*================ Headings ================*/
-h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4,
+h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center,
 h4,
 .h4,
+section.slide-background h1.practice-text-center,
 h5,
 .h5,
 h6,
@@ -1712,9 +1713,10 @@ h6,
   word-wrap: break-word;
 }
 
-h3 a, .h3 a, #shopify-section-footer .site-footer h4 a, #shopify-section-footer .site-footer .h4 a,
+h3 a, .h3 a, #shopify-section-footer .site-footer h4 a, #shopify-section-footer .site-footer .h4 a, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center a, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center a,
 h4 a,
 .h4 a,
+section.slide-background h1.practice-text-center a,
 h5 a,
 .h5 a,
 h6 a,
@@ -1724,25 +1726,27 @@ h6 a,
   font-weight: inherit;
 }
 
-h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center {
   font-size: calc(((var(--font-size-header)) / (var(--font-size-base))) * 1em);
   text-transform: none;
   letter-spacing: 0;
 }
 
 @media only screen and (max-width: 749px) {
-  h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+  h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center {
     font-size: calc(((var(--font-h3-mobile)) / (var(--font-size-base))) * 1em);
   }
 }
 h4,
-.h4 {
+.h4,
+section.slide-background h1.practice-text-center {
   font-size: calc(((var(--font-h4-desktop)) / (var(--font-size-base))) * 1em);
 }
 
 @media only screen and (max-width: 749px) {
   h4,
-.h4 {
+.h4,
+section.slide-background h1.practice-text-center {
     font-size: calc(((var(--font-h4-mobile)) / (var(--font-size-base))) * 1em);
   }
 }
@@ -1785,9 +1789,15 @@ h6,
 .rte #shopify-section-footer .site-footer h4,
 #shopify-section-footer .site-footer .rte h4,
 .rte #shopify-section-footer .site-footer .h4,
+.rte #shopify-section-footer .site-footer section.slide-background h1.practice-text-center,
+section.slide-background .rte #shopify-section-footer .site-footer h1.practice-text-center,
 #shopify-section-footer .site-footer .rte .h4,
+#shopify-section-footer .site-footer .rte section.slide-background h1.practice-text-center,
+section.slide-background #shopify-section-footer .site-footer .rte h1.practice-text-center,
 .rte h4,
 .rte .h4,
+.rte section.slide-background h1.practice-text-center,
+section.slide-background .rte h1.practice-text-center,
 .rte h5,
 .rte .h5,
 .rte h6,
@@ -1803,9 +1813,15 @@ h6,
 .rte #shopify-section-footer .site-footer h4:first-child,
 #shopify-section-footer .site-footer .rte h4:first-child,
 .rte #shopify-section-footer .site-footer .h4:first-child,
+.rte #shopify-section-footer .site-footer section.slide-background h1.practice-text-center:first-child,
+section.slide-background .rte #shopify-section-footer .site-footer h1.practice-text-center:first-child,
 #shopify-section-footer .site-footer .rte .h4:first-child,
+#shopify-section-footer .site-footer .rte section.slide-background h1.practice-text-center:first-child,
+section.slide-background #shopify-section-footer .site-footer .rte h1.practice-text-center:first-child,
 .rte h4:first-child,
 .rte .h4:first-child,
+.rte section.slide-background h1.practice-text-center:first-child,
+section.slide-background .rte h1.practice-text-center:first-child,
 .rte h5:first-child,
 .rte .h5:first-child,
 .rte h6:first-child,
@@ -7469,12 +7485,12 @@ hr {
     padding-bottom: 35px;
   }
 }
-.site-footer h4, .site-footer .h4 {
+.site-footer h4, .site-footer .h4, .site-footer section.slide-background h1.practice-text-center, section.slide-background .site-footer h1.practice-text-center {
   margin-bottom: 12.5px;
 }
 
 @media only screen and (min-width: 750px) {
-  .site-footer h4, .site-footer .h4 {
+  .site-footer h4, .site-footer .h4, .site-footer section.slide-background h1.practice-text-center, section.slide-background .site-footer h1.practice-text-center {
     min-height: calc(var(--font-size-header) * 0.7);
     margin-bottom: 25px;
   }
@@ -9348,6 +9364,24 @@ hr {
 /* =========================== */
 /* SASS PARTIALS */
 /* =========================== */
+.hide-mobile {
+  display: none;
+}
+@media (min-width: 600px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.hide-desktop {
+  display: block;
+}
+@media (min-width: 600px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
 .m-3 {
   margin: 3rem 3.5rem;
 }
@@ -9371,7 +9405,7 @@ hr {
 }
 @media (max-width: 599px) {
   .p-3 {
-    padding: 0rem;
+    padding: 0 1.8rem;
   }
 }
 
@@ -9801,7 +9835,7 @@ Image Helper Styles
   width: 100%;
 }
 
-.bl-serif, #shopify-section-footer .site-footer__linklist-item, h4, .h4, h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+.bl-serif, .large-nav-bar, #shopify-section-footer .site-footer__linklist-item, h4, .h4, section.slide-background h1.practice-text-center, h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center, h2, .h2 {
   font-family: "BL Artic Regular", sans-serif;
 }
 
@@ -9815,31 +9849,36 @@ h1, .large-heading {
   font-size: 4.3rem;
   letter-spacing: 0;
   line-height: 4rem;
+  text-transform: uppercase;
 }
 @media (min-width: 600px) {
   h1, .large-heading {
+    font-size: 6.8rem;
+    line-height: 5.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  h1, .large-heading {
     font-size: 9.8rem;
-    letter-spacing: 0;
     line-height: 8.8rem;
-    text-transform: uppercase;
   }
 }
 
-h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center {
   font-weight: 400;
   font-size: 4.3rem;
   letter-spacing: 0px;
   line-height: 4.4rem;
 }
 @media (min-width: 600px) {
-  h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+  h3, .h3, #shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center {
     font-size: 5.9rem;
     letter-spacing: -0.41px;
     line-height: 5.6rem;
   }
 }
 
-h4, .h4 {
+h4, .h4, section.slide-background h1.practice-text-center {
   font-size: 2.4rem;
   letter-spacing: -0.17px;
   line-height: 2.7rem;
@@ -9847,7 +9886,7 @@ h4, .h4 {
   font-weight: 400;
 }
 @media (min-width: 600px) {
-  h4, .h4 {
+  h4, .h4, section.slide-background h1.practice-text-center {
     font-size: 3rem;
     letter-spacing: -0.21px;
     line-height: 4rem;
@@ -9908,6 +9947,9 @@ h4, .h4 {
   line-height: 2.3rem;
   color: #BC7635;
 }
+.body-copy p, #shopify-section-blog-template .article__title p, .rte p.p1 p, .rte p.p2 p, .rte p p {
+  color: #BC7635;
+}
 @media (min-width: 600px) {
   .body-copy, #shopify-section-blog-template .article__title, .rte p.p1, .rte p.p2, .rte p {
     font-size: 1.9rem;
@@ -9935,10 +9977,6 @@ h4, .h4 {
 .rte .p1 {
   margin-bottom: 1rem;
 }
-.text-brown {
-  color: #BC7635;
-}
-
 .product-title {
   font-size: 2.4rem;
   letter-spacing: -0.17px;
@@ -9973,6 +10011,10 @@ h4, .h4 {
   color: #FBF8F4;
 }
 
+.text-brown, .accordion-text p {
+  color: #BC7635;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -9992,6 +10034,27 @@ h4, .h4 {
 @media (min-width: 600px) {
   .grid-2-col {
     grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+.grid-2-col.no-gap {
+  gap: 0;
+}
+
+.grid-2-col.half-right {
+  direction: rtl;
+}
+.grid-2-col.half-right > * {
+  direction: ltr;
+}
+
+.grid-1-4-col {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 600px) {
+  .grid-1-4-col {
+    grid-template-columns: 1fr 4fr;
     gap: 30px;
   }
 }
@@ -10285,6 +10348,138 @@ body, html {
   background-color: #f7f0e84a;
 }
 
+/* --------------------------------------------------------------------------
+Accordions
+-----------------------------------------------------------------------------*/
+.accordion h3 {
+  margin-top: 5rem;
+}
+.accordion h3:first-of-type {
+  margin-top: 0;
+}
+.accordion h3 + .accordion-panel {
+  border-top: 1px solid #BC7635;
+}
+
+/* Accordion Panel Styles ---------------- */
+.accordion-panel {
+  border-bottom: 1px solid #BC7635;
+  padding: 0.5rem 0;
+}
+.accordion-panel:first-of-type {
+  border-top: 1px solid #BC7635;
+}
+.accordion-panel h2 {
+  padding: 1rem 3.5rem 1rem 0;
+  margin-bottom: 0;
+}
+
+/* Accordion Text Styles ---------------- */
+.accordion-text {
+  display: none;
+  max-width: 94rem;
+}
+@media (min-width: 600px) {
+  .accordion-text p:first-of-type {
+    margin-top: 0.5rem;
+  }
+}
+.accordion-text p:last-of-type {
+  margin-bottom: 2.2rem;
+}
+
+.page-faq .accordion-text .body--sans-sm {
+  line-height: 1.5714285714;
+}
+@media (max-width: 599px) {
+  .page-faq .accordion-text .body--sans-sm {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 599px) {
+  .page-faq .accordion-text {
+    max-width: 95%;
+  }
+}
+.page-faq .accordion-text a {
+  text-decoration: underline;
+}
+
+/* Clickable accordion headings ---------------- */
+.accordion-toggle {
+  cursor: pointer;
+  position: relative;
+  margin-top: 0;
+  padding-right: 4.5rem;
+  text-transform: none;
+  /* Plus / Minus icon */
+  /* Accordion arrow (product detail page) */
+}
+@media (min-width: 600px) {
+  .accordion-toggle {
+    font-size: 2.4rem;
+    line-height: 1;
+    font-weight: 300;
+  }
+}
+@media (max-width: 599px) {
+  .accordion-toggle {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+}
+.accordion-toggle .icon {
+  cursor: pointer;
+  position: absolute;
+  right: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.1rem;
+  height: 1.4rem;
+}
+.accordion-toggle .icon::after,
+.accordion-toggle .icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.accordion-toggle .icon::before {
+  transition: all 0.3s ease-in-out;
+  transform: rotate(90deg);
+}
+.accordion-toggle .icon-arrow-down {
+  top: 42%;
+  width: 1.2rem;
+}
+@media (max-width: 599px) {
+  .accordion-toggle .icon-arrow-down {
+    width: 0.8rem;
+    top: 40%;
+  }
+}
+
+/* Expanded accordion styles ---------------- */
+.expanded .accordion-toggle .icon-arrow-down {
+  transform: translateY(-50%) rotateX(180deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.expanded .accordion-toggle span::before {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.expanded .accordion-toggle span::after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .need-assistance {
   background-color: #BC7635;
   padding: 3rem;
@@ -10377,7 +10572,7 @@ header.site-header .site-nav--centered {
   border-bottom: 1px solid #FBF8F4;
   margin: 2rem 0;
 }
-#shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4 {
+#shopify-section-footer .site-footer h4, #shopify-section-footer .site-footer .h4, #shopify-section-footer .site-footer section.slide-background h1.practice-text-center, section.slide-background #shopify-section-footer .site-footer h1.practice-text-center {
   color: #FBF8F4;
 }
 .page-container .section-header {
@@ -10409,6 +10604,10 @@ header.site-header .site-nav--centered {
   text-align: center;
   padding-bottom: 1rem;
   margin-bottom: 0;
+}
+
+section.slide-background h1.practice-text-center {
+  text-transform: none;
 }
 
 /*# sourceMappingURL=theme.css.map */

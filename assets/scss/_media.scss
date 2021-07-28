@@ -13,3 +13,18 @@
 @mixin for-big-desktop-up {
     @media (min-width: 1800px) { @content; }
 }
+
+.hide-mobile {
+    display: none;
+    @include for-tablet-portrait-up() {
+        display: block;
+    }
+}
+
+.hide-desktop {
+    display: block;
+    @include for-tablet-portrait-up() {
+        display: none;
+    }
+}
+
